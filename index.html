@@ -51,23 +51,28 @@
 
 <label for=”todoText”>Text </label>
 
-<input type=”text” class=”form-control”  /> //  ADD HERE < - -   ng-model= ”newTodo.text” /> 
+<input type=”text” class=”form-control” ng-model= ”newTodo.text”/> 
   //!!! Form control needed for BOOTSTRAP
 </div>     <!-- /.form-group - - >
 
 <div class=”form-group”>
 <label for=”todoPriority”>Priority </label>
-<select id=”todoPriority”  // ADD HERE < - -  ng-model= ”newTodo.priority”>
+<select id=”todoPriority” ng-model= ”newTodo.priority/”>
+
 <option value=”1”>High</option>
 <option value=”2”>Medium</option>
 <option value=”3”>Low</option>
 </select>
+
 </div>   ///<! - - /.form-group - - >
 </div>
+
 <div class=”panel-footer”>
 <button class=”btn btn-primary” ng-click=”addTodo()”>Add Todo</button>
 </div> <! - - > /,form-footer - ->
+
 </div>
+
 </form>
 </div>	 <! - - /.col-xs-12 - - >
 
@@ -79,11 +84,15 @@
 </div>
 
 <table class=”table”>
+
 // <thead> would normally go hear to hold the column headers </thead> //
+
+
 <tbody>
+
 <tr ng-repeat = “todo in todos” ng-class=”{{getTod0Class()}}”>
-<td>
-{{todo.text}}
+
+<td> {{todo.text}}
 </td>
 </tr>
 </tbody>
