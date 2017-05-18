@@ -3,21 +3,108 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Gulp Demo</title>
+  
+  <title>FullStackToDdoApp</title>
+  
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
   <!-- endbower -->
-
+  
+   <!-- bootstrap -->
+<link rel=”stylesheet” ref=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css integrity=”sha384q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fjWPGmkzs7” crossorigin=”anonymous”>
+  <!-- endbootstrap -->
+  
   <!-- inject:css -->
   <link rel="stylesheet" href="/app/styles/style.css">
   <!-- endinject -->
-</head>
 
-<body>
+  </head>
+<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs.js/1.5.5/angular.js></script>
 
-  <form class="form-horizontal">
-    <fieldset>
+  <body ng-controller=”todoController”>>
+  
+<div class=”row”>
+  
+    <div class= “container”>; 
+  <div class=”col-xs-12 col-sm-4”>
+  
+    
+  <form name=”todoEntryForm” role=”form”>
+<div class=”panel panel-info”>
+<div class=”panel heading”>
+
+<h3 class=”panel-title”>Add Todo Item</h3>
+</div>
+
+
+
+<div class=”panel- body”>
+</div>
+
+<div class=”panel-footer”>
+  
+<button class=”btn btn-primary”>Add Todo</button> ///left side button
+</div>  <! - -/.panel-footer - - >
+<div class=”form-group”>
+
+<label for=”todoText”>Text </label>
+
+<input type=”text” class=”form-control”  /> //  ADD HERE < - -   ng-model= ”newTodo.text” /> 
+  //!!! Form control needed for BOOTSTRAP
+</div>     <!-- /.form-group - - >
+
+<div class=”form-group”>
+<label for=”todoPriority”>Priority </label>
+<select id=”todoPriority”  // ADD HERE < - -  ng-model= ”newTodo.priority”>
+<option value=”1”>High</option>
+<option value=”2”>Medium</option>
+<option value=”3”>Low</option>
+</select>
+</div>   ///<! - - /.form-group - - >
+</div>
+<div class=”panel-footer”>
+<button class=”btn btn-primary” ng-click=”addTodo()”>Add Todo</button>
+</div> <! - - > /,form-footer - ->
+</div>
+</form>
+</div>	 <! - - /.col-xs-12 - - >
+
+<div class=”col-xs-12 col-sm-8”>
+<div class= btn-group”>
+<button type= “button” class=”btn btn-default” ng-click=”sort = ‘priority’’>Order by highest priority</button>
+<button type= “button” class=”btn btn-default” ng-click=”sort = ‘-priority’’>Order by lowest priority</button>
+<button type= “button” class=”btn btn-default ng-click=”sort = ‘text’”>Order alphabetically</button>
+</div>
+
+<table class=”table”>
+// <thead> would normally go hear to hold the column headers </thead> //
+<tbody>
+<tr ng-repeat = “todo in todos” ng-class=”{{getTod0Class()}}”>
+<td>
+{{todo.text}}
+</td>
+</tr>
+</tbody>
+</table> <! - - /.table - - >
+</div> 	//closes col-xs-8 <! - - /.col-xs-12 col-am-8- - >
+</div>		 //closes row <- - /.row - ->
+
+<! - - jQuery - - > starts here
+<script src=”//code.jquery.com/jquery.js”></script>
+
+<! - -Then Bootstrap Javascript - - >
+
+<! - -Then Angular - - >
+
+<script src=”https://cdnjs.cloudflare.com/ajax/libs/angular.js/3.5.5/angular.js”></script>
+
+<! - -Then Index.js Javascript - - >
+<script src=”index.js”></>
+
+   
+
 
       <!-- Form Name -->
       <legend>Form Name</legend>
